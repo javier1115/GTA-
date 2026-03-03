@@ -1,5 +1,19 @@
-[gd_scene format=3 uid="uid://cu3frg3lwro2a"]
+[gd_scene load_steps=3 format=3 uid="uid://cu3frg3lwro2a"]
+
+[ext_resource type="Texture2D" uid="uid://cvx5uxp26dhlv" path="res://Assets/sprites/coin.png" id="1_gf172"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dl81w"]
 
 [node name="Area2D" type="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dl81w")
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(-711.391, 370.599)
+scale = Vector2(-21.6061, -26.8249)
+texture = ExtResource("1_gf172")
+
+[node name="Coin2" type="Sprite2D" parent="."]
+position = Vector2(-1693, -449)
+texture = ExtResource("1_gf172")
