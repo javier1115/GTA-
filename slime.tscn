@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://budt8i4reb1eu"]
+
+[ext_resource type="Texture2D" uid="uid://bmh4uhaot6g40" path="res://Assets/sprites/slime_purple.png" id="1_5jc4t"]
+[ext_resource type="PackedScene" uid="uid://bbjv8b4bxjklu" path="res://kill_zone.tscn" id="2_4l1t8"]
+[ext_resource type="Script" uid="uid://bkgqq7umdqlyx" path="res://Scripts/slime.gd" id="2_ppcr1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppcr1"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jayke"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2002g"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bratd"]
+atlas = ExtResource("1_5jc4t")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5b0gg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppcr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jayke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2002g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bratd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da4t2"]
+size = Vector2(10, 13)
+
+[node name="Animated Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5b0gg")
+autoplay = "default"
+frame = 1
+frame_progress = 0.646154
+flip_h = true
+script = ExtResource("2_ppcr1")
+
+[node name="kill zone" parent="." instance=ExtResource("2_4l1t8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill zone"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_da4t2")
+
+[node name="RayCast RIGHT" type="RayCast2D" parent="kill zone"]
+position = Vector2(1, 6)
+target_position = Vector2(9, 0)
+collide_with_areas = true
+
+[node name="RayCast LEFT" type="RayCast2D" parent="kill zone"]
+position = Vector2(1, 6)
+target_position = Vector2(-14, 0)
+collide_with_areas = true
