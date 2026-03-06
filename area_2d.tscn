@@ -10,7 +10,7 @@
 sprite_frames = SubResource("SpriteFrames_dl81w")
 
 [node name="Coin" type="Sprite2D" parent="."]
-position = Vector2(-711.391, 370.599)
+position = Vector2(334, -780)
 scale = Vector2(-21.6061, -26.8249)
 texture = ExtResource("1_gf172")
 
