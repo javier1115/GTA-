@@ -13,4 +13,5 @@ func _process(delta):
 	if ray_cast_left.is_colliding():
 		direction = 1 
 		flip_h = false 
+		
 	position.x += direction * SPEED * delta 
