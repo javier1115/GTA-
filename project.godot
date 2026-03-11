@@ -15,6 +15,10 @@ run/main_scene="uid://nmc5m1unndqo"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://c40s4pm32iqjq"
 
+[autoload]
+
+Music="*res://Scences/music.tscn"
+
 [dotnet]
 
 project/assembly_name="Platformer Project"
